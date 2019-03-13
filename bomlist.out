@@ -1,8 +1,8 @@
 /src/include/input.h
+/src/include/inputasm.h
 /src/include/inputlib.h
 /src/input1.c
 /src/inputasm.c
-/src/include/inputasm.h
 /src/inputlib.c
 /src/main.c
 /src/obj/inputasm.o
