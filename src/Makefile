@@ -1,11 +1,11 @@
 INCDIR =./include
 CC=gcc
-CFLAGS=-I$(INCDIR) -fPIC
+CFLAGS=-I$(INCDIR) -fPIC -ftest-coverage
 
 ODIR=obj
 LDIR = ./lib
 
-LIBS=-lm -linputlib
+LIBS=-lm -linputlib -lgcov
 
 _OBJ = main.o input1.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
