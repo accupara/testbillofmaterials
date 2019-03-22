@@ -23,10 +23,10 @@ asm:
 
 lib: $(ODIR)/inputlib.o
 	mkdir -p $(LDIR)
-	$(CC) $(CFLAGS) -shared -fPIC -o $(LDIR)/libinputlib.so $(ODIR)/inputlib.o
+	$(CC) -shared -fPIC -o $(LDIR)/libinputlib.so $(ODIR)/inputlib.o
 
 bin: $(OBJ)
-	$(CC) -o testbillofmaterials $^ $(ODIR)/inputasm.o $(CFLAGS) -L $(LDIR) $(LIBS)
+	$(CC) -o testbillofmaterials $^ $(ODIR)/inputasm.o -L $(LDIR) $(LIBS)
 
 all: asm lib bin
 
