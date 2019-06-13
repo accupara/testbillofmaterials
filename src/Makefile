@@ -1,6 +1,7 @@
 INCDIR =./include
 CC=gcc
 CFLAGS=-I$(INCDIR) -fPIC -ftest-coverage
+AR=ar
 
 ODIR=obj
 LDIR = ./lib
@@ -24,6 +25,7 @@ asm:
 lib: $(ODIR)/inputlib.o
 	mkdir -p $(LDIR)
 	$(CC) -shared -fPIC -o $(LDIR)/libinputlib.so $(ODIR)/inputlib.o
+	$(AR) rcs $(LDIR)/libinputlib.a $(ODIR)/inputlib.o
 
 bin: $(OBJ)
 	$(CC) -o testbillofmaterials $^ $(ODIR)/inputasm.o -L $(LDIR) $(LIBS)
@@ -33,4 +35,4 @@ all: asm lib bin
 .PHONY: clean all
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ $(LDIR)/*
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ $(LDIR)/* testbillofmaterials
