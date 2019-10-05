@@ -26,7 +26,7 @@ $(ODIR)/inputlib_link.o: inputlib_link.c
 
 asm:
 	mkdir -p $(ODIR)
-	$(CC) $(CFLAGS) -S inputasm_link.c -o inputasm.S
+	$(CC) $(CFLAGS) -S inputasm.c -o inputasm.S
 	$(CC) $(CFLAGS) -c inputasm.S -o $(ODIR)/inputasm.o
 
 lib: $(ODIR)/inputlib_link.o
